@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>yelcamp</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">YELCAMP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto navbar-right">
+      <li class="nav-item active">
+        <a class="nav-link" href="/login">login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/register">sign up</a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link" href="/logout">logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+	
+
+	<header class="jumbotron">
+		<div class="container">
+		<h1>this is the campgprounds page</h1>	
+		<p>view are handpicked campgrounds from all over the world</p>
+		<p>
+			<a class="btn btn-primary btn-large" href="/campgrounds/new">add new campground</a> 
+		</p>
+	</div>
+	</header> 
+
+	<div class="row">
+		<div class="col-lg-12">
+			<h3>our most popular campgrounds!</h3>
+		</div>
+	</div>
+	<div class="row text-center " style="display:flex; flex-wrap: wrap;">
+		<% campgrounds.forEach(function(camp){ %>
+		<div class="col-md-3 col-sm-6">
+			<div class="img-thumbnail">
+				<img src=" <%= camp.image %>" width="200px" height="200px">
+				<div class="caption">
+					<h4> <%= camp.name %></h4>
+				</div>
+				<p>
+					<a href="/campgrounds/<%= camp._id %> " class="btn btn-primary">more info</a>
+				</p>					
+			</div>
+		</div>
+	<% }); %>
+		
+	</div>		
+</div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</html>
+

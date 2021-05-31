@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1><%= campground.name %></h1>
+
+<img src="<%= campground.image %>" width="200px" height="200px">
+<p><%= campground.description %></p> 
+<p><a href="/campgrounds/<%= campground._id %>/comments/new">add new comments</a></p>
+<% campground.comments.forEach(function(comment){ %>
+	<p>
+		<strong><%= comment.author %></strong> - <%= comment.text %>
+	</p>
+<% }) %>	
+</body>
+</html>
